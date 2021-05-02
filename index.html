@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Review Sheet: Neural Networks</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<h1>Review Sheet: Neural Networks</h1>
+	<p>Review of how data moves through a neural network by Max Z.</p>
+	<h2>What is a Neural Net?</h2>
+	<p>
+	Neural Networks are a type of algorithm that are widely used in the field of machine learing and 
+	more specifically, deep learning. Their purpose is to approximate a complex mathematical function which takes
+	in inputs and returns outputs. Neural Nets are comprised of layers of nodes, and their function-like nature is the reason you can see the input and output nodes on either side of the model.
+	</p>
+	<img src="images/InputOutput.png">
+
+	<h2>Data Flow</h2>
+	<p>
+	The aspect of neural networks that was the most confusing to me at first was how data moved through the entire system. So I'll try to make it very clear here. In order to explain, I'm also using visuals from a youtube video by LearnCode.academy linked below, since it really cleared up a lot of things for me as well.
+	</p>
+	<img src="images/network1.png">
+	<p>
+	First, numerical data is entered into the input layer, and flows along the arrows into the nodes in the hidden layer. Along the way, these numbers are multiplied by the weights on those arrows. When the resulting values arrive at the nodes, all the values at each node are summed and the bias is added. Finally, the activation function is applied to get the final value at each node. From there the process repeats until the values reach the output node. 
+	</p>
+
+	<h2>Configurable Features</h2>
+	<p>
+	There are a number of other details to consider when designing a Neural Network. That same video by LearnCode.academy has a number of opinions about this. First is the number of Hidden Layers, oftentimes, there is only one, but increasing the number of layers may be able to increase the complexity of the function. A good rule is to start with one, and should it not be sufficient, increase from their. Second is the number of nodes in each layer. Good rules of thumbs for these are to be midway between number of input and output nodes if there is a drastic difference between the two, and less than two times the number of input nodes. Finally, there is the activation function, which can be switched between the likes of tanh, ReLU, and sigmoid for added non-linearity.
+	</p>
+
+	<h2>Back Propagation</h2>
+	Now that we know how to build the Neural Network, the last step is actually setting the weights and biases of the neural net. There actually isn't a good way to calculate the weights and biases needed to make our model work, which is why we train the model. To do this, we first need a sizeable data set containg sample inputs and the correct outputs. We start off with random weights and biases, and after evaluating the error on the output layer, use back propagation to adjust these weights and biases. Back Propagation takes use of Gradient Descent, which evaluates the effect of each weight on the error, and increases or decreases these weights accordingly. Eventually, with enough training, the weights and biases of the model will become fine tuned enough evaluate new data that it wasn't trained on, and hopefully give an accurate output.
+
+	<h2>Reflection</h2>
+	<h3>What have you directly observed about ML?</h3>
+	<p>I've observed throughout my time working on ML and specifically neural nets that they are capapble of astonishing tasks.</p>
+
+	<h3>What do you think and what do you understand?</h3>
+	<p>If I had previously been shown a graph of a 3 layer network and been told that it would be able to identify MNIST characters at a level almost on par with the human brain, I would've told you that you're crazy. I had previously though that Machine Learning was a black box with concpets too hard for the average person to grasp, but now I understand that beauty in ML emerges from simplicity in how it works. Once you understand that a large part of ML is just numbers flowing through these neural nets, your appreciation for this field increases even more.</p>
+
+	<h3>What are you trying to learn more about, or what would you like to understand better? </h3>
+	<p>As of now, I've already done some research into the calculus behind Gradient Descent and Back Propagation, but I'd really like to now how its implemented in code</p>
+
+	<p>
+	Sources/Extra Readings:
+	</p>
+	<ol>
+		<li><a href="https://medium.com/tebs-lab/introduction-to-deep-learning-a46e92cb0022">https://medium.com/tebs-lab/introduction-to-deep-learning-a46e92cb0022</a></li>
+		<li><a href="https://medium.com/tebs-lab/deep-neural-networks-as-computational-graphs-867fcaa56c9">https://medium.com/tebs-lab/deep-neural-networks-as-computational-graphs-867fcaa56c9</a></li>
+		<li><a href="https://www.youtube.com/watch?v=GvQwE2OhL8I">https://www.youtube.com/watch?v=GvQwE2OhL8I</a></li>
+		<li><a href="https://en.wikipedia.org/wiki/Backpropagation">https://en.wikipedia.org/wiki/Backpropagation</a></li>
+		<li><a href="https://ml-cheatsheet.readthedocs.io/en/latest/activation_functions.html">https://ml-cheatsheet.readthedocs.io/en/latest/activation_functions.html</a></li>
+	</ol>
+</body>
+</html>
